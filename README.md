@@ -1,7 +1,7 @@
 # AlgoDJ
 cse6242
 Please use Python 3.9.12
-
+To start the app, run AlgoDJ.py
 
 IMPORTANT: Run "pip install -r requirements.txt" before running code!
 

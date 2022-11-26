@@ -8,11 +8,11 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import pandas_datareader.data as web 
 import datetime
-from header import Header
-from user_input_row1 import UserInput1
-from user_input_row2 import UserInput2
-from user_input_row3 import UserInput3
-from wordcloudviz import WordCloud
+from viz.header import Header
+from viz.user_input_row1 import UserInput1
+from viz.user_input_row2 import UserInput2
+from viz.user_input_row3 import UserInput3
+from viz.wordcloudviz import WordCloud
 # from playlist1 import Playlist
 
 
@@ -20,8 +20,8 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], meta_tags=[{
 
 
 
-
-app.layout = dbc.Container([
+ADJ_Layout = dbc.Container([
+# app.layout = dbc.Container([
     dbc.Row([Header]),
     dbc.Row([
         dbc.Col([

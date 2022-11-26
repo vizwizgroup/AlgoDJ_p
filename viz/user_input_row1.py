@@ -24,13 +24,13 @@ UserInput1 = html.Div([
             dbc.Label("From"),
             dbc.Select(
                 options=[{"label": x, "value": x}
-                    for x in range(1970,2023)]),
+                    for x in range(1950,2023)]),
         ]),
         dbc.Col([
             dbc.Label("To"),
             dbc.Select(
                 options=[{"label": y, "value": y}
-                    for y in range(1970,2023)]),
+                    for y in range(1950,2023)]),
         ]),
         
         dbc.Col([

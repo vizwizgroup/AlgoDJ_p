@@ -4,11 +4,12 @@ import pandas as pd
 from data.dataset import LoadData
 from dash_holoniq_wordcloud import DashWordcloud
 from dash import Dash, html
+import dash_bootstrap_components as dbc 
 from model.model_cosine_similarity import SongRecommender
 from model.network import Network
 
-load_data = LoadData("million")
-df_raw = load_data.get_data()
+
+df_raw = LoadData("million").get_data()
 playlist = SongRecommender(df_raw, 'She Belongs to Me').recommender()
 
 g = Network(limit=20, num_songs=10, num_related=3).build_network(df_raw, playlist, "artist")
@@ -41,22 +42,27 @@ app = Dash(__name__)
 
 WordCloud = html.Div([
 # app.layout = html.Div([
-    html.Div([
-        DashWordcloud(
-            id='wordcloud',
-            list=artists,
-            width=300, height=200,
-            gridSize=16,
-            color='#f0f0c0',
-            backgroundColor='#001f00',
-            shuffle=False,
-            rotateRatio=0.5,
-            shrinkToFit=True,
-            shape='circle',
-            hover=True
+   
+        dbc.Row([
+            dbc.Col([
+            DashWordcloud(
+                id='wordcloud',
+                list=artists,
+                width=540, height=300,
+                gridSize=20,
+                color='#f1f1f1',
+                backgroundColor='#421331',
+                shuffle=False,
+                rotateRatio=0.5,
+                shrinkToFit=True,
+                shape='circle',
+                hover=True
             )
+                
+            ])
         ])
+        
     ])
 
-if __name__ == '__main__':
-    app.run_server('0.0.0.0',debug=True, threaded=True, use_reloader=True, port=8888)
+# if __name__ == '__main__':
+#     app.run_server('0.0.0.0',debug=True, threaded=True, use_reloader=True, port=8888)
