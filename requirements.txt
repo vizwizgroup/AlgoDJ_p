@@ -1,4 +1,4 @@
--e git+https://github.com/vizwizgroup/AlgoDJ.git@547c5d3858385c260ebccc419d498db825d7f8ec#egg=algodj
+#-e git+https://github.com/vizwizgroup/AlgoDJ.git@547c5d3858385c260ebccc419d498db825d7f8ec#egg=algodj
 asttokens==2.1.0
 async-timeout==4.0.2
 backcall==0.2.0
