@@ -35,9 +35,9 @@ Header = html.Div([
                 
             dbc.ButtonGroup(
                 [
-                    dbc.Button("Sign in",  color="danger"),
-                    dbc.Button("Sign out", color="warning"),
-                    dbc.Button("Sign up",  color="success"),
+                    dbc.Button(id="sign_in" ,children="Sign in" ,  color="danger"),
+                    dbc.Button(id="sign_out",children="Sign out", color="warning"),
+                    dbc.Button(id="sign_up" ,children="Sign up" , color="success"),
                 ], className="mb-4",),
         ], width={"size":3,"order":3}),
     ]), 
